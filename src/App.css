@@ -1,0 +1,137 @@
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--PageBackground);
+  color: var(--DefaultFontColor);
+  font-family: "Roboto", sans-serif;
+}
+
+button:not(.submit-button) {
+  background: transparent;
+  border: 2px solid var(--DefaultFontColor);
+  color: var(--DefaultFontColor);
+  font-weight: 700;
+  padding: 5px 10px;
+  font-size: 20px;
+}
+
+.selected button:not(.submit-button) {
+  color: #411b57;
+  border-color: #411b57;
+}
+
+button:not(.submit-button):hover {
+  background: var(--NomineeCardBackgroundHover);
+  color: var(--HoverFontColor);
+  border: 2px solid var(--HoverFontColor);
+}
+
+header {
+  text-align: center;
+}
+
+.category-title-div {
+  background: #ffd;
+  color: #411b57;
+  font-size: 20px;
+  margin: 20px 10px;
+}
+
+.img-div img {
+  width: 200px;
+  height: 300px;
+  clip-path: circle();
+  object-fit: cover;
+  /* clip-path: circle(40% at 50% 40%);*/
+}
+
+.item-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--NomineeCardBackground);
+  margin: 10px;
+  padding: 20px;
+}
+
+.item-card h2 {
+  height: 72px;
+}
+
+.selected {
+  background: #ffd;
+  color: #411b57;
+  transition: background-color 0.3s ease;
+}
+
+.nominees-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .nominees-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .nominees-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.submit-button-div {
+  text-align: right;
+  padding: 10px;
+}
+
+.submit-button {
+  cursor: pointer;
+  font-size: 42px;
+  background: #ffd;
+  color: #411b57;
+}
+
+.submit-button:disabled {
+  opacity: 0.3;
+}
+
+/* Modal */
+
+.modal-close {
+  color: #411b57 !important;
+  background: transparent !important;
+  border: 2px solid #411b57 !important;
+  margin-left: auto !important;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.modalContainer {
+  max-width: 450px;
+  width: 90%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  color: #411b57;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  z-index: 3;
+}
+
+/* End Modal */
